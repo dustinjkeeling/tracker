@@ -7,8 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<ion-list inset>
+		<ion-item *ngFor="let location of locations">
+			<h2>Device ID: {{location.deviceId}}</h2>
+			<h3>Location: Latitude: {{location.latitude}} Longitude: {{location.longitude}}</h3>
+			<p>Battery Level: {{location.batLev}}</p>
+		</ion-item>
+	</ion-list>
 </ion-content>
