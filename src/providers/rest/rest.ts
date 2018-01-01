@@ -27,4 +27,15 @@ export class RestProvider {
   	});
   }
 
+  addData(data) {
+  	return new Promise((resolve, reject) => {
+  		this.http.post(this.apiUrl+'/location', JSON.stringify(data))
+  		.subscribe(res => {
+  			resolve(res);
+  		}, (err) => {
+  			reject(err);
+  		});
+  	});
+  }
+
 }
