@@ -9,10 +9,9 @@ import { RestProvider } from '../../providers/rest/rest';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-add-data',
-  templateUrl: 'add-data.html',
+  templateUrl: 'add-data.html'
 })
 export class AddDataPage {
 
@@ -20,17 +19,18 @@ export class AddDataPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
 
-  	saveData() {
-  		this.restapiService.saveData(this.data).then((result) => {
-  			console.log(result);
-  		}, (err) => {
-  			console.log(err);
-  		});
-  	}
+  	
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddDataPage');
   }
+  saveData() {
+  		this.restProvider.addData(this.data).then((result) => {
+  			console.log(result);
+  		}, (err) => {
+  			console.log(err);
+  		});
+  	}
 
 }
